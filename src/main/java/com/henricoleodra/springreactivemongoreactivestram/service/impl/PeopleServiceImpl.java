@@ -4,7 +4,6 @@ import com.henricoleodra.springreactivemongoreactivestram.service.PeopleService;
 import com.henricoleodra.springreactivemongoreactivestram.utils.MongoDBStore;
 
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("PeopleService")

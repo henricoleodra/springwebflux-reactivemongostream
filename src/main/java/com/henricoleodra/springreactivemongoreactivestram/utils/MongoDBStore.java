@@ -6,6 +6,7 @@ import com.mongodb.reactivestreams.client.MongoDatabase;
 
 import org.bson.Document;
 import org.json.JSONObject;
+import org.reactivestreams.Publisher;
 
 public class MongoDBStore {
     private MongoClient client;
@@ -13,11 +14,11 @@ public class MongoDBStore {
 
     public MongoDBStore(){
         client = new MongoDBConnection().getClient();
-        database = client.getDatabase("Products");
+        database = client.getDatabase("people");
     }
 
-    public void insertDocument(JSONObject data){
-        MongoCollection<Document> collection = database.getCollection("products");
+    public void insertDocument(JSONObject data) throws Exception{
+        MongoCollection<Document> collection = database.getCollection("detail");
         Document document = new Document();
         for (String keyStr : data.keySet()) {
             Object keyValue = data.get(keyStr);
